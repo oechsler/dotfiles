@@ -50,12 +50,9 @@ if [ $installed = "true" ]; then
   git branch | cat
   echo "${BLUE}==>${WHITE}${BOLD} Provide a unique label for this update: ${GREEN}"; read name
   echo "${WHITE}"
-  if [ name = "" ]; then
-      git checkout -b master > /dev/null
-  else
-      git checkout -b rev_$name > /dev/null
-  fi
-  git merge master --no-edit
+  git branch -D rev_$name > /dev/null
+  git checkout -b rev_$name > /dev/null
+  git merge master --no-edit > /dev/null
 
   # Pop the local changes from stash
   git stash pop
