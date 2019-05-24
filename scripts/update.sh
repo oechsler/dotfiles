@@ -51,10 +51,9 @@ if [ $installed = "true" ]; then
   echo "${BLUE}==>${WHITE}${BOLD} Provide a unique label for this update: ${GREEN}"; read name
   echo "${WHITE}"
   if [ name = "" ]; then
-      # If no name is provided use a random number
-      git checkout -b rev_$((($RANDOM % 89999)+10000))
+      git checkout -b master > /dev/null
   else
-      git checkout -b rev_$name
+      git checkout -b rev_$name > /dev/null
   fi
   git merge master --no-edit
 
