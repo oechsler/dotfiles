@@ -31,12 +31,12 @@ fi
 # Check for previous installs
 installed=$(cat ~/.installed 2>&1)
 
+# Remeber the username
+user=$(whoami)
+
 if [ "$installed" != "true" ]; then
   # Install VIM themes and plugins
   echo "${GREEN}==>${WHITE}${BOLD} Setting up vim."
-
-  # Remeber the username
-  user=$(whoami)
 
   if [ -z $linux ]; then
     # Some user access was last whilst installing
@@ -75,10 +75,8 @@ if [ "$installed" != "true" ]; then
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim # Pathogene
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim # Vundle
 
-  # Link personal copy of production vimrc
-  rm ~/.vimrc; ln -sf $DOTDIR/vimrc.$user ~/.vimrc
-
-  unset user
-
   echo "${BLUE}==> ${WHITE}${BOLD}Run ${GREEN}vundle${WHITE}${BOLD} after install finished.${WHITE}"
 fi
+
+# Link personal copy of production vimrc
+rm ~/.vimrc; ln -sf $DOTDIR/vimrc.$user ~/.vimrc
