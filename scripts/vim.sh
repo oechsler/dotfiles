@@ -62,7 +62,7 @@ if [ "$installed" != "true" ]; then
     # On Mac Python 3 is uesd instead
     version=$(python3 -V | grep -o "\d\.\d")
   fi
-  echo "${BLUE}==> ${WHITE}${BOLD}Python version is ${YELLOW}$version${WHITE}"
+  echo "${BLUE}==> ${WHITE}${BOLD}Python version ${YELLOW}$version${WHITE} is used."
   if [ $linux ]; then
       echo "$(cat ~/.vimrc) rtp+=~/.local/lib/python$(echo $version)/site-packages/powerline/bindings/vim/" > ../vimrc.$user
   else
