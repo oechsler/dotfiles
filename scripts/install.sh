@@ -50,7 +50,7 @@ echo "${GREEN}==>${WHITE}${BOLD} Linking dotfiles to ${YELLOW}$HOME${WHITE}${BOL
 cd $DOTDIR/configs
 for entry in *; do
     ln -sf $DOTDIR/configs/$entry ~/.$entry
-    echo "${YELLOW}$entry${WHITE} is linkted to ${YELLOW}~/.$entry${WHITE}."
+    echo "$entry is linkted to ~/.$entry."
 done
 cd $DOTDIR/scripts
 

@@ -32,18 +32,17 @@ fi
 installed=$(cat ~/.installed 2>&1)
 
 if [ "$installed" != "true" ]; then
-  # Checkout the first install local branch (10000)
-  git checkout -b rev_installed
+  # Checkout the rev_installed local branch
+  git checkout -b rev_installed > /dev/null
   echo "${BLUE}==>${WHITE}${BOLD} Switched branch to ${YELLOW}$(git rev-parse --abbrev-ref HEAD)${WHITE}${BOLD}."
 
   # Display post-install information
   echo "${BLUE}==>${WHITE}${BOLD} You may now want to install things from the ${YELLOW}misc${WHITE}${BOLD} directory."
 
+  # Display apps from Setapp on Mac
   if [ -z $linux ]; then
-    open /usr/local/Caskroom/setap
-
-    echo "${BLUE}==>${WHITE}${BOLD} Install the following apps from ${BLUE}Setapp${WHITE}${BOLD}:"
-    cat ../packages/setapp.txt
+    open /usr/local/Caskroom/setapp
+    echo "${BLUE}==>${WHITE}${BOLD} Apps from ${BLUE}Setapp${WHITE}${BOLD} that are defined: $(cat ../packages/setapp.txt | tr '\n' ', ')"
   fi
 fi
 

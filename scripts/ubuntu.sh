@@ -31,11 +31,17 @@ fi
 # Check for previous installs
 installed=$(cat ~/.installed 2>&1)
 
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb
-sudo add-apt-repository universe
-sudo add-apt-repository ppa:linuxuprising/java -y
-sudo apt update
+if [ $installed != "true" ]; then
+    wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+    sudo dpkg -i packages-microsoft-prod.deb
+    rm packages-microsoft-prod.deb
+    sudo add-apt-repository universe
+    sudo add-apt-repository ppa:linuxuprising/java -y
+fi
 
-sudo apt-get install $(cat ../packages/apt.txt | tr '\n' ' ')
+sudo apt update
+sudo apt upgrade
+
+if [ $installed != "true" ]; then
+    sudo apt-get install $(cat ../packages/apt.txt | tr '\n' ' ')
+fi

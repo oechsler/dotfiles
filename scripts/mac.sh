@@ -31,7 +31,7 @@ fi
 # Check for previous installs
 installed=$(cat ~/.installed 2>&1)
 
-if [ -z $linux ]; then
+if [ -z $linux ] && [ $installed != "true" ]; then
   # Import Xcode color theme on Mac
   mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes
   cp ../misc/Default_Sam.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Default_Sam.xccolortheme
