@@ -42,7 +42,8 @@ if [ "$installed" != "true" ]; then
   # Display apps from Setapp on Mac
   if [ -z $linux ]; then
     open /usr/local/Caskroom/setapp
-    echo "${BLUE}==>${WHITE}${BOLD} Apps from ${BLUE}Setapp${WHITE}${BOLD} that are defined: $(cat ../packages/setapp.txt | tr '\n' ', ')"
+    echo "${BLUE}==>${WHITE}${BOLD} Apps from ${BLUE}Setapp${WHITE}${BOLD} that are defined:"
+    cat ../packages/setapp.txt
   fi
 fi
 
