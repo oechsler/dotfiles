@@ -1,0 +1,19 @@
+{
+  "segments": [
+    "hostname",
+    "username",
+    "ssh",
+    "cwd",
+    "git",
+    "git_stash",
+    "read_only",
+    "root"
+  ],
+  "vcs": {
+    "show_symbol": true
+  },
+  "cwd": {
+    "mode": "dironly"
+  },
+  "theme": "default"
+}

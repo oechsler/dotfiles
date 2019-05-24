@@ -1,0 +1,177 @@
+"Vimrc for Samuel Oechsler
+
+"Plugin manager {{{
+set nocompatible
+filetype off
+
+execute pathogen#infect()
+call vundle#begin()
+
+"Vundle managed by itself
+Plugin 'VundleVim/Vundle.vim'
+
+"General Plugins
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-fugitive'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'pthrasher/conqueterm-vim'
+Plugin 'mrmargolis/dogmatic.vim'
+
+"TypeScript plugins
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'jason0x43/vim-js-indent'
+
+call vundle#end()
+filetype plugin indent on
+" }}}
+
+"Colors {{{
+colorscheme molokai "Monokai for VIM!
+
+"Mark only line that overrun the colorcolumn
+call matchadd('ColorColumn', '\%81v', 100)
+" }}}
+
+"Editor layout {{{
+filetype indent on
+syntax enable
+set number
+set relativenumber
+set cursorline
+set splitbelow
+
+"Don't f***ing beep
+set visualbell
+set noerrorbells
+
+"Autocomplete for commands
+set wildmenu
+set showcmd
+
+set lazyredraw
+set clipboard=unnamed
+
+"Terminal settings
+"let g:ConqueTerm_Color = 2
+"let g:ConqueTerm_TERM = 'xterm'
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_CloseOnEnd = 1
+" }}}
+
+"iTerm & MacVim settings {{{
+set ttyfast
+set mouse=a
+
+set guifont=Fira\ Code\ Retinae:h13
+"set columns=80
+"set lines=24
+set guioptions=
+" }}}
+
+"Tab {{{
+set backspace=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+" }}}
+
+ "Movement & remaps {{{
+let mapleader = ","
+
+"First none whitspace char
+nnoremap 1 ^
+
+"Line by line movement
+nnoremap j gj
+nnoremap k gk
+
+"Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+"Split hotkeys
+nnoremap <C-w>h <C-w>s
+
+"Tab hotkey
+nnoremap g0 :tabfirst<CR>
+nnoremap <C-w>t :tabnew<CR>
+
+"Terminal hotkey
+nnoremap <silent> <C-b> :ConqueTermSplit bash<CR><ESC>:resize 12<CR>i
+
+"Gitdiff hotkey
+nnoremap <C-d> :Gdiff<CR>
+
+"Multiple cursors hotkeys
+let g:multi_cursor_select_all_word_key = '<leader><C-d>'
+let g:multi_cursor_select_all_key      = '<leader>g<C-d>'
+"}}}
+
+"Folding {{{
+set foldenable
+set foldmethod=indent
+set foldlevelstart=10
+nnoremap <space> za
+" }}}
+
+"Search {{{
+set hlsearch
+set showmatch
+set incsearch
+set ignorecase
+set smartcase
+nnoremap <leader><space> :nohlsearch<CR>
+" }}}
+
+"HTML editing {{{
+set matchpairs+=<:>
+" }}}
+
+"Powerline {{{
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
+set showtabline=1
+set encoding=utf-8
+set noshowmode
+set t_Co=256
+" }}}
+
+"CtrlP {{{
+"set runtimepath+=~/.vim/bundle/ctrlp.vim
+nnoremap <c-o> :CtrlPFunky<CR>
+" }}}
+
+"Nerdtree {{{
+let NERDTreeMapActivateNode = '<space>'
+"let g:nerdtree_tabs_autofind = 1
+
+map <silent> <C-t> :NERDTreeFocus<CR>
+" }}}
+
+ "YouCompleteMe {{{
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" }}}
+
+"TypeScript {{{
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+" }}}
+
+"Marker folding {{{
+set modelines=1
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
+
+"Machine specific configuration
+set

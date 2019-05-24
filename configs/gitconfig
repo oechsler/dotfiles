@@ -1,0 +1,13 @@
+[core]
+	excludesfile = ~/.gitignore_global
+
+[user]
+	name = Samuel Oechsler
+	email = samuel@oechsler.it
+	signingkey = 68F1CB0DD3612121
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = /usr/local/bin/gpg

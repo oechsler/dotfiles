@@ -1,0 +1,3 @@
+typescript
+create-react-app
+gitmoji-cli

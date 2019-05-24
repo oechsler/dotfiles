@@ -1,0 +1,17 @@
+bash
+zsh
+htop
+neofetch
+gnupg
+pinentry-mac
+git
+git-flow
+vim
+yarn
+wget
+python3
+gradle
+node
+go
+ghc
+speedtest-cli
