@@ -37,7 +37,7 @@ if [ "$installed" != "true" ]; then
   echo "${BLUE}==>${WHITE}${BOLD} Switched branch to ${YELLOW}$(git rev-parse --abbrev-ref HEAD)${WHITE}${BOLD}."
 
   # Display post-install information
-  echo "${BLUE}==>${WHITE}${BOLD} You may now want to install things from ${YELLOW}./noinstall${WHITE}${BOLD}."
+  echo "${BLUE}==>${WHITE}${BOLD} You may now want to install things from the ${YELLOW}misc${WHITE}${BOLD} directory."
 
   if [ -z $linux ]; then
     open /usr/local/Caskroom/setap
