@@ -22,11 +22,24 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'pthrasher/conqueterm-vim'
 Plugin 'mrmargolis/dogmatic.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'sudo.vim'
+Plugin 'chrisbra/colorizer'
+Plugin '907th/vim-auto-save'
 
 "TypeScript plugins
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'jason0x43/vim-js-indent'
+Plugin 'prettier/vim-prettier'
+
+"Golang plugins
+Plugin 'fatih/vim-go'
+
+"Kotlin plugins
+Plugin 'udalov/kotlin-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -51,10 +64,14 @@ set splitbelow
 set visualbell
 set noerrorbells
 
+"Auto save
+let g:auto_save = 1
+
 "Autocomplete for commands
 set wildmenu
 set showcmd
 
+let g:colorizer_auto_color = 1
 set lazyredraw
 set clipboard=unnamed
 
@@ -93,6 +110,9 @@ nnoremap 1 ^
 nnoremap j gj
 nnoremap k gk
 
+"Easymotion
+map <Leader> <Plug>(easymotion-prefix)
+
 "Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -103,14 +123,22 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-w>h <C-w>s
 
 "Tab hotkey
-nnoremap g0 :tabfirst<CR>
+nnoremap t0 :tabfirst<CR>
+nnoremap th :tabprevious<CR>
+nnoremap tl :tabnext<CR>
 nnoremap <C-w>t :tabnew<CR>
 
 "Terminal hotkey
-nnoremap <silent> <C-b> :ConqueTermSplit bash<CR><ESC>:resize 12<CR>i
+nnoremap <silent> sh :ConqueTermSplit bash<CR><ESC>:resize 12<CR>i
 
-"Gitdiff hotkey
+"Gitdiff/blame hotkey
 nnoremap <C-d> :Gdiff<CR>
+nnoremap <C-a> :Gblame<CR>
+
+"Golang hotkeys
+nnoremap gi :GoImport<space>
+nnoremap gI :GoDrop<space>
+nnoremap ga :GoImportAs<space>
 
 "Multiple cursors hotkeys
 let g:multi_cursor_select_all_word_key = '<leader><C-d>'
@@ -155,7 +183,7 @@ nnoremap <c-o> :CtrlPFunky<CR>
 let NERDTreeMapActivateNode = '<space>'
 "let g:nerdtree_tabs_autofind = 1
 
-map <silent> <C-t> :NERDTreeFocus<CR>
+map <silent> <C-b> :NERDTreeFocus<CR>
 " }}}
 
  "YouCompleteMe {{{
@@ -174,4 +202,4 @@ set modelines=1
 " vim:foldmethod=marker:foldlevel=0
 
 "Machine specific configuration
-set
+set 
