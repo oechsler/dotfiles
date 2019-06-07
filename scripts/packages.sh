@@ -81,6 +81,8 @@ else
         # Python packages downloaded via pip3
         pip3 install $(cat ../packages/pip.txt | tr '\n' ' ')
     fi
+    
+    brew cleanup
 fi
 
 yarn global upgrade
