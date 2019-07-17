@@ -11,11 +11,14 @@ visual-studio-code
 intellij-idea
 insomnia
 tower
+arduino
+mactex
 microsoft-office
 microsoft-teams
 spotify
 discord
-steam
+openemu
+minecraft
 texturepacker
 whatsapp
 setapp
