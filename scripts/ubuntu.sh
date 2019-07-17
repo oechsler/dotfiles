@@ -44,4 +44,7 @@ sudo apt upgrade
 
 if [ $installed != "true" ]; then
     sudo apt-get install $(cat ../packages/apt.txt | tr '\n' ' ')
+    
+    # Manual yarn installation via npm
+    sudo npm install -g yarn
 fi
