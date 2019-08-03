@@ -100,7 +100,7 @@ fi
 
 # Setting up golang workspace
 if [ -z $linux ]; then
-	export GOPATH=$HOME/Documents/go
+	export GOPATH=$HOME/repos/go
 fi
 
 # Default editor
