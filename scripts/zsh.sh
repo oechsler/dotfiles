@@ -49,6 +49,6 @@ if [ "$installed" != "true" ]; then
         compaudit | xargs chmod g-w,o-w
     fi
     
-    # Zgen plugin manager
-    git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
+    # Wakatime zsh plugin
+    git clone https://github.com/sobolevn/wakatime-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/wakatime
 fi
