@@ -62,18 +62,11 @@ plugins=(
   web-search
   zsh_reload
   zsh-autosuggestions
+  wakatime
 )
 
 # Oh my zsh import
 source $ZSH/oh-my-zsh.sh
-
-# Zgen import
-source "${HOME}/.zgen/zgen.zsh"
-if ! zgen saved; then
-    zgen load wbingli/zsh-wakatime
-    zgen load unixorn/autoupdate-zgen
-    zgen save
-fi
 
 # Colorful directory listing
 if [ $linux ]; then
