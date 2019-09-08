@@ -1,6 +1,6 @@
 font-fira-code
 1password
-google-chrome
+microsoft-edge-beta
 iterm2
 cmake
 ngrok
@@ -9,16 +9,16 @@ dotnet-sdk
 java
 visual-studio-code
 intellij-idea
-insomnia
+microsoft-azure-storage-explorer
 tower
 arduino
 mactex
 microsoft-office
 microsoft-teams
-spotify
 discord
 openemu
 minecraft
+steam
 texturepacker
 whatsapp
 setapp
