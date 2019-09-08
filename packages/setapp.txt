@@ -8,3 +8,4 @@ Paste
 Squash
 Ulysses
 Screens
+SideNotes
