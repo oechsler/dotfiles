@@ -4,6 +4,7 @@ htop
 neofetch
 gnupg
 pinentry-mac
+cocoapods
 git
 git-flow
 vim
@@ -13,5 +14,4 @@ python3
 gradle
 node
 go
-ghc
 speedtest-cli
