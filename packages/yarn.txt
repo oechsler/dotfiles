@@ -6,3 +6,4 @@ expo-cli
 tslint
 eslint
 gitmoji-cli
+artillery
