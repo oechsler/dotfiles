@@ -6,15 +6,7 @@ python
 python3-dev
 python-pip
 build-essential
-cmake
 curl
 git
 vim
-apt-transport-https
-dotnet-sdk-2.2
-oracle-java12-installer
-nodejs
-npm
-golang
 docker.io
-docker-compose
