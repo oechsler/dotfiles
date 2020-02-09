@@ -60,5 +60,5 @@ version_control_post
 
 write_line ${GREEN} "Installed ${GREEN}dotfiles${RBOLD}."
 
-printf "${YELLOW}==>${RBOLD} Press ${YELLOW}any key${RBOLD} to restart the shell: ${RBOLD}"; read
+printf "${YELLOW}==>${RBOLD} Press ${YELLOW}enter${RBOLD} to restart the shell: ${RBOLD}"; read
 clear; zsh
