@@ -22,11 +22,11 @@ So grab your self a cup of :coffee: or a :beer: if thats more your thing and enj
 
 When using vim with my `.vimrc` make sure to run the `vundle` command, to install the plugins with [Vundle](https://github.com/VundleVim/Vundle.vim).
 
-_If you might wonder what the `misc` directory does: I do store stuff here that needs to be installed after the setup of the environment in some graphical applications._
+_If you might wonder what the `misc` directory does: I do store stuff here that needs to be installed after the setup of the environment in some graphical applications. - manually as of now_
 
 ## Updating
 
-Simply pull down the new version of the repo and re-run the `install.zsh` installation script with the `--update` flag and your are up to date in just a few seconds, since the script doesn't install packages that it installed initially. - Unless you want to! If you want to do a fresh install or "upgrade" (including added packages), you first have to remove the current installation using `install.zsh --remove`.
+Simply pull down the new version of the repo and re-run the `install.zsh` installation script with the `--update` flag and you are up to date in just a few seconds, since the script doesn't install packages that it installed initially. - Unless you want to! If you want to do a fresh install or "upgrade" (including added packages), you first have to remove the current installation using `install.zsh --remove`. Then simply rerun the installer.
 
 There is now also a much simpler updater, which performs all the necessary steps for you. You can try it out using the `dotupdate` command in either the bash or zsh shell. - Its a great bit easier than the previous, yet still supported, process!
 
