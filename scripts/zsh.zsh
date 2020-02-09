@@ -61,9 +61,9 @@ install_zsh() {
 
         # Inject update command and env vars
         if [[ -n $env ]]; then
-            echo "alias dotupdate='zsh -c \$DOTDIR/install.zsh --update --env=$env'\n\n$(cat $PWD/$USER.zshrc)" > $PWD/$USER.zshrc
+            echo "alias dotupdate='zsh -c \"cd $PWD && ./install.zsh --update --env=$env\"'\n\n$(cat $PWD/$USER.zshrc)" > $PWD/$USER.zshrc
         else
-            echo "alias dotupdate='zsh -c \$DOTDIR/install.zsh --update'\n\n$(cat $PWD/$USER.zshrc)" > $PWD/$USER.zshrc
+            echo "alias dotupdate='zsh -c \"cd $PWD && ./install.zsh --update\"'\n\n$(cat $PWD/$USER.zshrc)" > $PWD/$USER.zshrc
         fi
         echo "export DOTDIR=$PWD\n$(cat $PWD/$USER.zshrc)" > $PWD/$USER.zshrc
         git add --all && git commit -m "Add user specific .zshrc"
