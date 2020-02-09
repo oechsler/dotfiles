@@ -1,9 +1,0 @@
-typescript
-create-react-app
-create-react-native-app
-expo-cli
-@vue/cli
-tslint
-eslint
-gitmoji-cli
-artillery
