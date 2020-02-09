@@ -7,7 +7,7 @@
 	signingkey = 68F1CB0DD3612121
 
 [commit]
-	gpgsign = true
+	gpgsign = false
 
 [gpg]
 	program = /usr/local/bin/gpg
