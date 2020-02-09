@@ -34,7 +34,7 @@ There is now also a much simpler updater, which performs all the necessary steps
 
 > It is now possible to specify different configurations for specific setups.
 
-Environments can be created using a simple prefix for configurations. The default one is called `default`. It is necessary to have all config files copied for each environment, as there is as of now no fallback to `default`. If you want to use a specific environment during install simply provide the `--env=ENV_NAME` argument to the installer.
+Environments can be created using a simple prefix for configurations, like for example `work.zshrc`. The default one is called `default`. It is necessary to have all config files copied for each environment, as there is as of now no fallback to `default`. If you want to use a specific environment during install simply provide the `--env=ENV_NAME` argument to the installer.
 
 ## License
 
