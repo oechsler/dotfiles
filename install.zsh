@@ -40,6 +40,7 @@ if [[ $update == true ]]; then
     update_homebrew || return 1
     update_mas || return 1
     update_yarn || return 1
+    update_vim || return 1
 elif [[ $remove == true ]]; then
     remove_git || return 1
     remove_zsh || return 1
