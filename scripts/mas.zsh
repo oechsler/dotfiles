@@ -20,7 +20,7 @@ install_mas() {
     # Mas is no longer able to autoammte this task (since macOS 10.14)
     open "/System/Applications/App Store.app"
     write_line ${BLUE} "Please logint to the ${BLUE}App Store${RBOLD}."
-    printf "${YELLOW}==>${RBOLD} Press enter to continue${RESET} "; read
+    printf "${YELLOW}==>${RBOLD} Press ${YELLOW}enter${RBOLD} to continue:${RESET} "; read
 
     if [[ -z "$(mas account | egrep -o '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b')" ]]; then
         write_line ${RED} "There is no Apple-ID connectd to the App Store."
