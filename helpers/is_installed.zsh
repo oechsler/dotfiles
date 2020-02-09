@@ -5,8 +5,11 @@
 # an existing installation of the dotfiles
 
 is_installed() {
+    if [[ $update == true ]]; then
+        return 0
+    fi
+
     if [[ $debug == true ]] ||
-        [[ $remove == true ]] ||
         [[ ! -e $HOME/.installed ]]; then
         return 1
     fi

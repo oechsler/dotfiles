@@ -29,7 +29,7 @@ write_line $BLUE "Running on ${BLUE}$(which_os)${RBOLD}."
 version_control_pre
 
 # Check for already present installation
-if is_installed; then
+if [[ $update != true ]] && [[ $remove != true ]] && is_installed; then
     write_line ${RED} "Dotfiles are already installed."
     write_line ${BLUE} "Use ${BLUE}dotupdate${RBOLD} to update from upstream."
     return 1

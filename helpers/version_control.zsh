@@ -4,7 +4,7 @@
 # Enables versioning with git
 
 version_control_pre() {
-    if [[ $update == true ]] || [[ $remove == true ]]; then
+    if is_installed; then
         # Remove persistent installation state for upgrade
         set_installed false
 
