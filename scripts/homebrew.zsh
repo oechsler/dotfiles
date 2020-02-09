@@ -69,10 +69,10 @@ update_homebrew() {
         return 0
     fi
 
-    write_line ${GREEN} "Updating ${RED}homebrew${RBOLD}."
+    write_line ${GREEN} "Updating ${GREEN}homebrew${RBOLD}."
 
     # Run hombrew update commands
     brew update; brew upgrade; brew cask upgrade
 
-    write_line ${GREEN} "Updated ${RED}homebrew${RBOLD}."
+    write_line ${GREEN} "Updated ${GREEN}homebrew${RBOLD}."
 }

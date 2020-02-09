@@ -50,10 +50,10 @@ update_mas() {
         return 0
     fi
 
-    write_line ${GREEN} "Updating ${RED}mas${RBOLD}."
+    write_line ${GREEN} "Updating ${GREEN}mas${RBOLD}."
 
     # Run mas update commands
     mas upgrade
 
-    write_line ${GREEN} "Updated ${RED}mas${RBOLD}."
+    write_line ${GREEN} "Updated ${GREEN}mas${RBOLD}."
 }
