@@ -39,7 +39,8 @@ version_control_post() {
             git stash pop
         fi
     elif [[ $remove == true ]]; then
-        git branch -D rev_install
+        # Disable version control
+        git branch -D rev_installed
     fi
 
     branch_name=$(git rev-parse --abbrev-ref HEAD)
