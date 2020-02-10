@@ -38,6 +38,8 @@ version_control_post() {
             # Pop the local changes from git stash
             git stash pop
         fi
+    elif [[ $remove == true ]]; then
+        git branch -D rev_install
     fi
 
     branch_name=$(git rev-parse --abbrev-ref HEAD)
