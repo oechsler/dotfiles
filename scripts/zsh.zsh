@@ -55,7 +55,7 @@ install_zsh() {
     zsh -c "$(git clone https://github.com/sobolevn/wakatime-zsh-plugin.git $ZSH_CUSTOM/plugins/wakatime)"
 
     # Create user specific .wakatime.cfg
-    $wakatime_config=./configs/${env:-default}.wakatime.cfg
+    wakatime_config=$PWD/configs/${env:-default}.wakatime.cfg
     if [[ -e $wakatime_config ]]; then
         user_wakatime_config=$PWD/$USER.wakatime.cfg
         if [[ ! -e $user_wakatime_config ]]; then
@@ -74,7 +74,7 @@ install_zsh() {
     # Backup current .zshrc
     mv $HOME/.zshrc $HOME/.zshrc.pre-dotfiles
 
-    zshrc=./configs/${env:-default}.zshrc
+    zshrc=$PWD/configs/${env:-default}.zshrc
     if [[ -e $zshrc ]]; then
         user_zshrc=$PWD/$USER.zshrc
         if [[ ! -e $user_zshrc ]]; then

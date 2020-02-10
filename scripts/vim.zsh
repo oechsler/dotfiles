@@ -51,9 +51,9 @@ install_vim() {
     fi
     $pip_command install powerline-status
 
-    vimrc=./configs/${env:-default}.vimrc
+    vimrc=$PWD/configs/${env:-default}.vimrc
     if [[ -e $vimrc ]]; then
-        user_vimrc$PWD/$USER.vimrc
+        user_vimrc=$PWD/$USER.vimrc
         if [[ ! -e $user_vimrc ]]; then
             # Create user specific .vimrc
             cat $vimrc > $user_vimrc

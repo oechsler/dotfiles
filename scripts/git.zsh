@@ -12,7 +12,7 @@ install_git() {
     write_line ${GREEN} "Installing ${GREEN}git${RBOLD}."
 
     # Create user specific .gitconfig
-    gitconfig=./configs/${env:-default}.gitconfig
+    gitconfig=$PWD/configs/${env:-default}.gitconfig
     if [[ -e $gitconfig ]]; then
         user_gitconfig=$PWD/$USER.gitconfig
         if [[ ! -e $user_gitconfig ]]; then
@@ -29,7 +29,7 @@ install_git() {
     fi
 
     # Create user specific .gitignore_global
-    gitignore_global=./configs/${env:-default}.gitignore_global
+    gitignore_global=$PWD/configs/${env:-default}.gitignore_global
     if [[ -e $gitignore_global ]]; then
         user_gitignore_global=$PWD/$USER.gitignore_global
         if [[ ! -e $user_gitignore_global ]]; then
