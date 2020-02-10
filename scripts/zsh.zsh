@@ -29,6 +29,9 @@ install_zsh() {
     zsh -c "$(git clone https://github.com/denysdovhan/spaceship-prompt.git $ZSH_CUSTOM/themes/spaceship-prompt)"
     ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+    # Install zsh syntax highlighting
+    zsh -c "$(git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting)"
+
     # Install zsh autosuggestions
     zsh -c "$(git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions)"
 
@@ -51,25 +54,45 @@ install_zsh() {
     $pip_command install wakatime
     zsh -c "$(git clone https://github.com/sobolevn/wakatime-zsh-plugin.git $ZSH_CUSTOM/plugins/wakatime)"
 
+    # Create user specific .wakatime.cfg
+    $wakatime_config=./configs/${env:-default}.wakatime.cfg
+    if [[ -e $wakatime_config ]]; then
+        user_wakatime_config=$PWD/$USER.wakatime.cfg
+        if [[ ! -e $user_wakatime_config ]]; then
+            # Create user specific .wakatime.cfg
+            cat $wakatime_config > $user_wakatime_config
+            git add --all && git commit -m "Add user specific .wakatime.cfg"
+        fi
+
+        # Register symbolic link to ~/.wakatime.cfg
+        ln -sf $user_wakatime_config $HOME/.wakatime.cfg
+    else
+        write_line ${RED} "Missing ${RED}$wakatime_config${RBOLD} config."
+        return 1
+    fi
+
     # Backup current .zshrc
     mv $HOME/.zshrc $HOME/.zshrc.pre-dotfiles
 
     zshrc=./configs/${env:-default}.zshrc
     if [[ -e $zshrc ]]; then
-        # Create user specific .zshrc
-        cat $zshrc > $PWD/$USER.zshrc
+        user_zshrc=$PWD/$USER.zshrc
+        if [[ ! -e $user_zshrc ]]; then
+            # Create user specific .zshrc
+            cat $zshrc > $PWD/$USER.zshrc
 
-        # Inject update command and env vars
-        if [[ -n $env ]]; then
-            echo "alias dotupdate='zsh -c \"cd $PWD && ./install.zsh --update --env=$env\"'\n\n$(cat $PWD/$USER.zshrc)" > $PWD/$USER.zshrc
-        else
-            echo "alias dotupdate='zsh -c \"cd $PWD && ./install.zsh --update\"'\n\n$(cat $PWD/$USER.zshrc)" > $PWD/$USER.zshrc
+            # Inject update command and env vars
+            if [[ -n $env ]]; then
+                echo "alias dotupdate='zsh -c \"cd $PWD && ./install.zsh --update --env=$env\"'\n\n$(cat $user_zshrc)" > $user_zshrc
+            else
+                echo "alias dotupdate='zsh -c \"cd $PWD && ./install.zsh --update\"'\n\n$(cat $user_zshrc)" > $user_zshrc
+            fi
+            echo "export DOTDIR=$PWD\n$(cat $user_zshrc)" > $user_zshrc
+            git add --all && git commit -m "Add user specific .zshrc"
         fi
-        echo "export DOTDIR=$PWD\n$(cat $PWD/$USER.zshrc)" > $PWD/$USER.zshrc
-        git add --all && git commit -m "Add user specific .zshrc"
 
         # Register symbolic link to ~/.zshrc
-        ln -s $PWD/$USER.zshrc $HOME/.zshrc
+        ln -sf $user_zshrc $HOME/.zshrc
     else
         write_line ${RED} "Missing ${RED}$zshrc${RBOLD} config."
         return 1

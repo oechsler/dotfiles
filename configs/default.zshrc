@@ -46,6 +46,7 @@ plugins=(
   emoji
   web-search
   zsh_reload
+  zsh-syntax-highlighting
   zsh-autosuggestions
   wakatime
 )

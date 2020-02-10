@@ -53,33 +53,36 @@ install_vim() {
 
     vimrc=./configs/${env:-default}.vimrc
     if [[ -e $vimrc ]]; then
-        # Create user specific .vimrc
-        cat $vimrc > $PWD/$USER.vimrc
+        user_vimrc$PWD/$USER.vimrc
+        if [[ ! -e $user_vimrc ]]; then
+            # Create user specific .vimrc
+            cat $vimrc > $user_vimrc
 
-        if [[ "$(which_os)" == "darwin" ]]; then
-            if [[ $(command_exists python3 -V) -ne 0 ]]; then
-                write_line ${RED} "Dependency ${RED}python3${RBOLD} not found."
-                return 1
+            if [[ "$(which_os)" == "darwin" ]]; then
+                if [[ $(command_exists python3 -V) -ne 0 ]]; then
+                    write_line ${RED} "Dependency ${RED}python3${RBOLD} not found."
+                    return 1
+                fi
+
+                python_version=$(python3 -V 2>&1 | egrep -o "\d\.\d")
+            else
+                if [[ $(command_exists python -V) -ne 0 ]]; then
+                    write_line ${RED} "Dependency ${RED}python${RBOLD} not found."
+                    return 1
+                fi
+
+                python_version=$(python2 -V 2>&1 | egrep -o "\d\.\d")
             fi
+            pip_packages=/usr/local/lib/python$python_version/site-packages
 
-            python_version=$(python3 -V 2>&1 | egrep -o "\d\.\d")
-        else
-            if [[ $(command_exists python -V) -ne 0 ]]; then
-                write_line ${RED} "Dependency ${RED}python${RBOLD} not found."
-                return 1
-            fi
-
-            python_version=$(python2 -V 2>&1 | egrep -o "\d\.\d")
+            # Inject update command and env vars
+            echo "$(cat $user_vimrc)\n\"Machine specific configuration" > $user_vimrc
+            echo "$(cat $user_vimrc)\nset rtp+=$pip_packages/powerline/bindings/vim/" > $user_vimrc
+            git add --all && git commit -m "Add user specific .vimrc"
         fi
-        pip_packages=/usr/local/lib/python$python_version/site-packages
-
-        # Inject update command and env vars
-        echo "$(cat $PWD/$USER.vimrc)\n\"Machine specific configuration" > $PWD/$USER.vimrc
-        echo "$(cat $PWD/$USER.vimrc)\nset rtp+=$pip_packages/powerline/bindings/vim/" > $PWD/$USER.vimrc
-        git add --all && git commit -m "Add user specific .vimrc"
 
         # Register symbolic link to ~/.vimrc
-        ln -s $PWD/$USER.vimrc $HOME/.vimrc
+        ln -sf $user_vimrc $HOME/.vimrc
     else
         write_line ${RED} "Missing ${RED}$vimrc${RBOLD} config."
         return 1

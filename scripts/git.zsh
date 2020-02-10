@@ -14,12 +14,15 @@ install_git() {
     # Create user specific .gitconfig
     gitconfig=./configs/${env:-default}.gitconfig
     if [[ -e $gitconfig ]]; then
-        # Create user specific .gitconfig
-        cat $gitconfig > $PWD/$USER.gitconfig
-        git add --all && git commit -m "Add user specific .gitconfig"
+        user_gitconfig=$PWD/$USER.gitconfig
+        if [[ ! -e $user_gitconfig ]]; then
+            # Create user specific .gitconfig
+            cat $gitconfig > $user_gitconfig
+            git add --all && git commit -m "Add user specific .gitconfig"
+        fi
 
         # Register symbolic link to ~/.gitconfig
-        ln -s $PWD/$USER.gitconfig $HOME/.gitconfig
+        ln -sf $user_gitconfig $HOME/.gitconfig
     else
         write_line ${RED} "Missing ${RED}$gitconfig${RBOLD} config."
         return 1
@@ -28,12 +31,15 @@ install_git() {
     # Create user specific .gitignore_global
     gitignore_global=./configs/${env:-default}.gitignore_global
     if [[ -e $gitignore_global ]]; then
-        # Create user specific .gitignore_global
-        cat $gitignore_global > $PWD/$USER.gitignore_global
-        git add --all && git commit -m "Add user specific .gitignore_global"
+        user_gitignore_global=$PWD/$USER.gitignore_global
+        if [[ ! -e $user_gitignore_global ]]; then
+            # Create user specific .gitignore_global
+            cat $gitignore_global > $user_gitignore_global
+            git add --all && git commit -m "Add user specific .gitignore_global"
+        fi
 
         # Register symbolic link to ~/.gitignore_global
-        ln -s $PWD/$USER.gitignore_global $HOME/.gitignore_global
+        ln -sf $user_gitignore_global $HOME/.gitignore_global
     else
         write_line ${RED} "Missing ${RED}$gitignore_global${RBOLD} config."
         return 1
