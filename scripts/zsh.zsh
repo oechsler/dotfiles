@@ -110,8 +110,8 @@ remove_zsh() {
 
     sudo rm -r $HOME/.oh-my-zsh/
     rm $HOME/.zshrc
-    mv $HOME/.zshrc.pre-dotfiles $HOME/.zshrc
-    rm $PWD/$USER.zshrc
+    mv $HOME/.zshrc.pre-dotfiles $HOME/.zshrc $HOME/.wakatime.cfg
+    rm $PWD/$USER.zshrc $PWD/$SUER.wakatime.cfg
 
     write_line ${RED} "Removed ${RED}zsh${RBOLD}."
 }

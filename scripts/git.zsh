@@ -45,6 +45,10 @@ install_git() {
         return 1
     fi
 
+    if [[ "$(which_os)" == "darwin" ]]; then
+        ln -sf ./configs/default.gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
+    fi
+
     write_line ${GREEN} "Installed ${GREEN}git${RBOLD}."
 }
 
