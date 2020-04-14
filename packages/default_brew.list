@@ -3,7 +3,7 @@ azure-functions-core-tools@3
 bluetoothconnector
 cocoapods
 doctl
-erlang
+elixir
 git
 git-flow
 gnupg
