@@ -7,3 +7,4 @@ typescript
 create-react-app
 create-react-native-app
 eslint
+prettier
