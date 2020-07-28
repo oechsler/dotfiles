@@ -39,7 +39,6 @@ plugins=(
   vundle
   xcode
   textastic
-  forklift
   iterm2
 
   # Misc plugins
