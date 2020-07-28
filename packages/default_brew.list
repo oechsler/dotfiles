@@ -3,10 +3,8 @@ azure-functions-core-tools@3
 bluetoothconnector
 cocoapods
 doctl
-elixir
 git
 git-flow
-gnupg
 go
 htop
 mono
@@ -14,12 +12,7 @@ neofetch
 node
 pinentry-mac
 python
-rebar3
 ruby
-sdl2
-sdl2_image
-sdl2_mixer
-sdl2_ttf
 speedtest-cli
 vim
 wget
