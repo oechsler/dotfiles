@@ -75,7 +75,7 @@ export EDITOR="vim"
 alias vi="vim" # VIM as vi
 alias cat="ccat" # Pygments with cat
 alias screenfetch="neofetch" # Screenfetch
-alias dwget="wget -P $HOME/Downloads/" # Wget to downloads
+alias dwget="wget -P /Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Downloads/" # Wget to downloads
 alias ls="ls -lh --color" # Advanced ls
 
 # Mac specific alias overrides
