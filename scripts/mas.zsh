@@ -5,7 +5,7 @@
 
 install_mas() {
     if [[ "$(which_os)" != "darwin" ]]; then
-        write_line ${YELLOW} "Skipping ${GREEN}mas${RBOLD}0"""
+        write_line ${YELLOW} "Skipping ${GREEN}mas${RBOLD}."
         return 1
     fi
 
@@ -17,7 +17,7 @@ install_mas() {
     fi
 
     # Prompt user to login to the App Store manually
-    # Mas is no longer able to autoammte this task (since macOS 10.14)
+    # Mas is no longer able to automate this task (since macOS 10.14)
     open "/System/Applications/App Store.app"
     write_line ${BLUE} "Please logint to the ${BLUE}App Store${RBOLD}."
     printf "${YELLOW}==>${RBOLD} Press ${YELLOW}enter${RBOLD} to continue:${RESET} "; read
