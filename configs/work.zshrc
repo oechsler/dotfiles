@@ -18,17 +18,28 @@ plugins=(
   git-auto-fetch
 
   # Package manager plugins
+  brew
+  npm
+  npx
   yarn
+  pod
 
-  # Compiler plguins
+  # Compiler plugins
   node
+  dotnet
   golang
+  
+  # Deployment plugins
   docker
   docker-compose
+  kubectl
+  doctl
+  
 
   # System plugins
   osx
   sudo
+  man
   colorize
   colored-man-pages
   command-not-found
