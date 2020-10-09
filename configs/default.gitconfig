@@ -6,6 +6,9 @@
 	email = samuel@oechsler.it
 	signingkey = 68F1CB0DD3612121
 
+[pull]
+	rebase = false
+
 [commit]
 	gpgsign = false
 
