@@ -74,11 +74,6 @@ else
   export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 fi
 
-# Set gopath to different directory
-if [[ "$(which_os)" == "darwin" ]]; then
-  export GOPATH=$HOME/repos/go
-fi
-
 # Set default editor to vim
 export EDITOR="vim"
 
@@ -87,15 +82,13 @@ alias vi="vim" # VIM as vi
 alias cat="ccat" # Pygments with cat
 alias screenfetch="neofetch" # Screenfetch
 alias dwget="wget -P /Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Downloads/" # Wget to downloads
-alias ls="ls -lh --color" # Advanced ls
 
 # Mac specific alias overrides
 if [[ $(which_os) == "darwin" ]]; then
-  alias ls="ls -lh" # Advanced ls
   alias cask="brew cask" # Homebrew cask
 fi
 
-cd() { builtin cd "$@" && ls; } # Run ls after cd
+cd() { builtin cd "$@" && ll; } # Run ll after cd
 
 # DuckDuckGo Bang search
 alias wiki='ddg \!w'
