@@ -18,7 +18,7 @@ install_homebrew() {
 
     if [[ $debug != true ]]; then
         # Execute the homebrew installer
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     fi
 
     if [[ $(command_exists brew --version) -ne 0 ]]; then
