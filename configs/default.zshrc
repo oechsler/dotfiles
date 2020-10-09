@@ -8,6 +8,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set shell theme
 ZSH_THEME="spaceship"
+SPACESHIP_VI_MODE_COLOR=cyan
+SPACESHIP_VI_MODE_INSERT=i
+SPACESHIP_VI_MODE_NORMAL=n
 
 # Oh my zsh plugins
 plugins=(
