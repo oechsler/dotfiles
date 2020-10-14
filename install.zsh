@@ -62,7 +62,11 @@ fi
 # Post hook for versionized interactions
 version_control_post
 
-write_line ${GREEN} "Installed ${GREEN}dotfiles${RBOLD}."
+if is_installed; then
+    write_line ${GREEN} "Installed ${GREEN}dotfiles${RBOLD}."
+else
+    write_line ${GREEN} "Uninstalled ${GREEN}dotfiles${RBOLD}."
+fi
 
 printf "${YELLOW}==>${RBOLD} Press ${YELLOW}enter${RBOLD} to restart the shell: ${RBOLD}"; read
 clear && cd $HOME && zsh
