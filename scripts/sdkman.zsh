@@ -46,5 +46,5 @@ update_sdkman() {
     # Run sdkman update commands
     sdk selfupdate; sdk update
 
-    write_line ${GREEN} "Updated ${GREEN}sdkman${RBOLD}.
+    write_line ${GREEN} "Updated ${GREEN}sdkman${RBOLD}."
 }

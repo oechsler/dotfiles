@@ -23,6 +23,6 @@ set_installed() {
     if [[ $remove != true ]] && [[ $1 == true ]]; then
         touch $HOME/.installed
     else
-        rm $HOME/.installed
+        rm -f $HOME/.installed
     fi
 }
