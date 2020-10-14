@@ -5,6 +5,7 @@ bartender
 blender
 clean-me
 cmake
+datagrip
 discord
 docker
 dotnet-sdk
@@ -23,7 +24,6 @@ microsoft-auto-update
 microsoft-edge
 minecraft
 ngrok
-oracle-jdk
 rectangle
 rider
 setapp
