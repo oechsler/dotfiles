@@ -18,8 +18,6 @@ SPACESHIP_VI_MODE_COLOR=cyan
 SPACESHIP_VI_MODE_INSERT=i
 SPACESHIP_VI_MODE_NORMAL=n
 
-spaceship_vi_mode_enable
-
 # Oh my zsh plugins
 plugins=(
   # Git plugins
@@ -114,4 +112,5 @@ alias wa='ddg \!wa'
 alias gitstore="git config credential.helper store"
 
 # Startup commands
+spaceship_vi_mode_enable
 clear
