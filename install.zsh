@@ -18,6 +18,7 @@ source ./scripts/git.zsh
 source ./scripts/homebrew.zsh
 source ./scripts/mas.zsh
 source ./scripts/pip.zsh
+source ./scripts/sdkman.zsh
 source ./scripts/yarn.zsh
 source ./scripts/zsh.zsh
 source ./scripts/vim.zsh
@@ -39,6 +40,7 @@ fi
 if [[ $update == true ]]; then
     update_homebrew || return 1
     update_mas || return 1
+    update_sdkman || return 1
     update_yarn || return 1
     update_vim || return 1
 elif [[ $remove == true ]]; then
@@ -50,6 +52,7 @@ else
     install_homebrew || return 1
     install_mas || return 1
     install_pip || return 1
+    install_sdkman || return 1
     install_yarn || return 1
     install_zsh || return 1
     install_vim || return 1

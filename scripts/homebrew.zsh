@@ -39,7 +39,7 @@ install_homebrew() {
         brew tap homebrew/cask-drivers
         brew tap homebrew/cask-fonts
         brew tap homebrew/services
-        brew tap azure/functions
+        brew tap beeftornado/rmtree
 
         # Install AppStore support
         brew install mas

@@ -3,6 +3,10 @@
 
 source $DOTDIR/helpers/which_os.zsh
 
+# Make sdkman work in zsh
+export SDKMAN_DIR="/Users/samuel/.sdkman"
+[[ -s "/Users/samuel/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/samuel/.sdkman/bin/sdkman-init.sh"
+
 # Set the path for oh-my-zsh workdir
 export ZSH=$HOME/.oh-my-zsh
 
@@ -26,6 +30,7 @@ plugins=(
 
   # Package manager plugins
   brew
+  sdk
   npm
   npx
   yarn
