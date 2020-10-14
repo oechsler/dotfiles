@@ -8,9 +8,13 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set shell theme
 ZSH_THEME="spaceship"
+
+# Configure spaceship shell theme options
 SPACESHIP_VI_MODE_COLOR=cyan
 SPACESHIP_VI_MODE_INSERT=i
 SPACESHIP_VI_MODE_NORMAL=n
+
+spaceship_vi_mode_enable
 
 # Oh my zsh plugins
 plugins=(
@@ -25,7 +29,6 @@ plugins=(
   npm
   npx
   yarn
-  pod
 
   # Compiler plugins
   node
@@ -38,7 +41,6 @@ plugins=(
   kubectl
   doctl
   
-
   # System plugins
   osx
   sudo
@@ -83,11 +85,11 @@ export EDITOR="vim"
 # General alias commands
 alias vi="vim" # VIM as vi
 alias cat="ccat" # Pygments with cat
-alias screenfetch="neofetch" # Screenfetch
-alias dwget="wget -P /Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Downloads/" # Wget to downloads
+alias screenfetch="neofetch" # Screenfetch redirects to neofetch
 
 # Mac specific alias overrides
 if [[ $(which_os) == "darwin" ]]; then
+  alias dwget="wget -P /Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Downloads/" # Wget to downloads
   alias cask="brew cask" # Homebrew cask
 fi
 
