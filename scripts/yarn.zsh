@@ -6,6 +6,10 @@
 install_yarn() {
     write_line ${GREEN} "Installing ${GREEN}yarn${RBOLD}."
 
+    # Reinstall yarn
+    brew link --overwrite yarn
+    brew reinstall yarn
+
     if [[ $(command_exists yarn -v) -ne 0 ]]; then
         write_line ${RED} "Dependency ${RED}yarn${RBOLD} not found."
         return 1
