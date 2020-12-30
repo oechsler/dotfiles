@@ -6,9 +6,10 @@
 install_yarn() {
     write_line ${GREEN} "Installing ${GREEN}yarn${RBOLD}."
 
-    # Reinstall yarn
+    # Relink yarn symlinks
+    brew unlink yarn
+    rm /usr/local/bin/yarn
     brew link --overwrite yarn
-    brew reinstall yarn
 
     if [[ $(command_exists yarn -v) -ne 0 ]]; then
         write_line ${RED} "Dependency ${RED}yarn${RBOLD} not found."
@@ -36,9 +37,10 @@ install_yarn() {
 update_yarn() {
     write_line ${GREEN} "Updating ${GREEN}yarn${RBOLD}."
 
-    # Reinstall yarn
+    # Relink yarn symlinks
+    brew unlink yarn
+    rm /usr/local/bin/yarn
     brew link --overwrite yarn
-    brew reinstall yarn
 
     # Run yarn update command
     yarn global upgrade
