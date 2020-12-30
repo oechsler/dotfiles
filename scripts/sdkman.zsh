@@ -43,8 +43,11 @@ install_sdkman() {
 update_sdkman() {
     write_line ${GREEN} "Updating ${GREEN}sdkman${RBOLD}."
 
+    export SDKMAN_DIR="$HOME/.sdkman"
+    [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
     # Run sdkman update commands
-    sdk selfupdate; sdk update
+    sdk selfupdate force; sdk upgrade
 
     write_line ${GREEN} "Updated ${GREEN}sdkman${RBOLD}."
 }
