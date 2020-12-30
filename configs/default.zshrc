@@ -4,8 +4,8 @@
 source $DOTDIR/helpers/which_os.zsh
 
 # Make sdkman work in zsh
-export SDKMAN_DIR="/Users/samuel/.sdkman"
-[[ -s "/Users/samuel/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/samuel/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Set the path for oh-my-zsh workdir
 export ZSH=$HOME/.oh-my-zsh
@@ -88,12 +88,11 @@ export EDITOR="vim"
 # General alias commands
 alias vi="vim" # VIM as vi
 alias cat="ccat" # Pygments with cat
-alias screenfetch="neofetch" # Screenfetch redirects to neofetch
+alias screenfetch="neofetch" # Screenfetch with neofetch
 
 # Mac specific alias overrides
 if [[ $(which_os) == "darwin" ]]; then
-  alias dwget="wget -P /Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Downloads/" # Wget to downloads
-  alias cask="brew cask" # Homebrew cask
+  alias dwget="wget -P $HOME/Library/Mobile Documents/com~apple~CloudDocs/Downloads/" # Wget to downloads
 fi
 
 cd() { builtin cd "$@" && ll; } # Run ll after cd
