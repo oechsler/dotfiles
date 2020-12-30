@@ -30,7 +30,6 @@ plugins=(
   brew
   sdk
   npm
-  npx
   yarn
 
   # Compiler plugins
