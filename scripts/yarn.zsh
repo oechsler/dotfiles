@@ -34,6 +34,10 @@ update_yarn() {
 
     # Run yarn update command
     yarn global upgrade
+    
+    # Reinstall yarn
+    brew link --overwrite yarn
+    brew reinstall yarn
 
     write_line ${GREEN} "Updated ${GREEN}yarn${RBOLD}."
 }
