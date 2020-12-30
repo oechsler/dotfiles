@@ -32,12 +32,12 @@ install_yarn() {
 update_yarn() {
     write_line ${GREEN} "Updating ${GREEN}yarn${RBOLD}."
 
-    # Run yarn update command
-    yarn global upgrade
-    
     # Reinstall yarn
     brew link --overwrite yarn
     brew reinstall yarn
+
+    # Run yarn update command
+    yarn global upgrade
 
     write_line ${GREEN} "Updated ${GREEN}yarn${RBOLD}."
 }
