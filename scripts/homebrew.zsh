@@ -53,7 +53,7 @@ install_homebrew() {
         fi
 
         if [[ -e $cask_list ]]; then
-            brew cask install $(read_list $cask_list)
+            brew install --cask $(read_list $cask_list)
         else
             write_line ${RED} "Missing ${RED}$cask_list${RBOLD} package list."
             return 1
@@ -72,7 +72,7 @@ update_homebrew() {
     write_line ${GREEN} "Updating ${GREEN}homebrew${RBOLD}."
 
     # Run hombrew update commands
-    brew update; brew upgrade; brew cask upgrade
+    brew update; brew upgrade
 
     write_line ${GREEN} "Updated ${GREEN}homebrew${RBOLD}."
 }
