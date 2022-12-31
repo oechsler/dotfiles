@@ -66,6 +66,9 @@ if [[ $IS_MACOS == true ]]; then
     export SUDO_ASKPASS=$HOME/.askpass.applescript
 fi
 
+# Intialize thefuck
+eval $(thefuck --alias)
+
 # Register colorful directory listing
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"
