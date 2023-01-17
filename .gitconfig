@@ -7,10 +7,11 @@
 	excludesfile = ~/.gitignore_global
 
 [init]
-    defaultBranch = main
+	defaultBranch = main
 
 [pull]
-	rebase = false
+	rebase = true
+	autoStash = true
 
 [gpg]
 	format = ssh
