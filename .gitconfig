@@ -1,7 +1,6 @@
 [user]
 	name = Samuel Oechsler
 	email = samuel@oechsler.it
-	#signingkey = 4BE9E546A73D9A849A3B798A68F1CB0DD3612121
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMmMdLN8uZTSLxyogKuhdLWNxHH3YgYFyZtTS5Gz3flx
 
 [core]
@@ -14,7 +13,6 @@
 	rebase = false
 
 [gpg]
-	#program = /usr/local/bin/gpg
 	format = ssh
 
 [gpg "ssh"]
