@@ -66,7 +66,7 @@ if [[ $IS_MACOS == true ]]; then
     export SUDO_ASKPASS=$HOME/.askpass.applescript
 fi
 
-# Intialize thefuck
+# Initialize thefuck
 eval $(thefuck --alias)
 
 # Register colorful directory listing
@@ -92,4 +92,8 @@ alias screenfetch="neofetch" # Screenfetch with neofetch
 cd() { builtin cd "$@" && tree -L 1 -C --dirsfirst; }
 
 # Clear the screen on startup
-clear
+if [ -z "$MOTD" ]; then
+  clear
+  neofetch
+  export MOTD=1
+fi
