@@ -95,5 +95,6 @@ cd() { builtin cd "$@" && tree -L 1 -C --dirsfirst; }
 if [ -z "$MOTD" ]; then
   clear
   neofetch
+  lt
   export MOTD=1
 fi
