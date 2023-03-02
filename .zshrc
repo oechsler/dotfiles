@@ -94,6 +94,6 @@ cd() { builtin cd "$@" && tree -L 1 -C --dirsfirst; }
 # Clear the screen on startup
 if [ -z "$MOTD" ]; then
   clear
-  lt
+  tree -L 1 -C --dirsfirst
   export MOTD=1
 fi
