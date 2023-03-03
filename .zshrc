@@ -51,6 +51,7 @@ antigen bundle colored-man-pages
 antigen bundle command-not-found
 
 antigen theme spaceship-prompt/spaceship-prompt
+antigen bundle spaceship-prompt/spaceship-vi-mode@main
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Tell Antigen that we are done
@@ -65,6 +66,13 @@ fi
 if [[ $IS_MACOS == true ]]; then
     export SUDO_ASKPASS=$HOME/.askpass.applescript
 fi
+
+# Initialize Spaceship prompt
+eval spaceship_vi_mode_enable
+SPACESHIP_VI_MODE_INSERT=i
+SPACESHIP_VI_MODE_NORMAL=n
+SPACESHIP_VI_MODE_COLOR=green
+spaceship add --after line_sep vi_mode
 
 # Initialize thefuck
 eval $(thefuck --alias)
