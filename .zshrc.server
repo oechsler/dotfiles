@@ -50,6 +50,5 @@ cd() { builtin cd "$@" && tree -L 1 -C --dirsfirst; }
 if [ -z "$FANCY_MOTD" ]; then
   clear
   $HOME/fancy-motd/motd.sh
-  tree -L 1 -C --dirsfirst
   export FANCY_MOTD=1
 fi
