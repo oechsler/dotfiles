@@ -3,7 +3,7 @@
 # Server default settings for ZShell
 
 # Initialize antigen
-source $HOME/antigen.zsh
+source $HOME/.antigen.zsh
 
 # Load the Oh-My-Zsh library
 antigen use oh-my-zsh
