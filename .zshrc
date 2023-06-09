@@ -32,7 +32,7 @@ if [[ $IS_MACOS == true ]]; then
     source $BREW_INSTALL_PATH/share/antigen/antigen.zsh
     eval "$($BREW_INSTALL_PATH/bin/brew shellenv)"
 else
-    source /usr/share/zsh/share/antigen.zsh
+    source $HOME/.antigen.zsh
 fi
 
 # Load the Oh-My-Zsh library
@@ -56,11 +56,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Tell Antigen that we are done
 antigen apply
-
-# Register 1Password as ssh auth socket
-if [[ $IS_MACOS == true ]]; then
-    export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-fi
 
 # Register askpass script for sudo
 if [[ $IS_MACOS == true ]]; then
@@ -93,6 +88,9 @@ alias vi="vim" # Vim as vi
 alias cat="ccat" # Pygments with cat
 alias dwget="wget -P $HOME/Downloads/" # Wget to downloads
 alias screenfetch="neofetch" # Screenfetch with neofetch
+
+# SteamVR Lighthouse command
+alias lh="$HOME/Games/steamvr_utils/scripts/steamvr_utils.py"
 
 # Custom extension functions
 
