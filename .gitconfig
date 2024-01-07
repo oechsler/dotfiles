@@ -1,7 +1,7 @@
 [user]
 	name = Samuel Oechsler
 	email = samuel@oechsler.it
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMmMdLN8uZTSLxyogKuhdLWNxHH3YgYFyZtTS5Gz3flx
+	signingkey = ~/.ssh/id_ed25519.pub
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -16,26 +16,23 @@
 [gpg]
 	format = ssh
 
-#[gpg "ssh"]
-#	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-
 [commit]
 	gpgsign = true
 
 [diff]
-	tool = Kaleidoscope
+	tool = meld
 
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$REMOTE"
 
 [difftool]
 	prompt = false
 
 [merge]
-	tool = Kaleidoscope
+	tool = meld
 
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+[mergetool "meld"]
+	cmd = cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 	trustExitCode = true
 
 [mergetool]
